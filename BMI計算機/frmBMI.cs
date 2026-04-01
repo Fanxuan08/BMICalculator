@@ -56,7 +56,6 @@ namespace BMI計算機
 
             // 將身高從公分轉換為公尺
             height = height / 100;
-            // 計算BMI
             double bmi = weight / (height * height);
 
             string[] strResultList = { "體重過輕", "健康體位", "體位過重", "輕度肥胖",
@@ -86,7 +85,7 @@ namespace BMI計算機
             double idealWeight = 22 * (height * height);
             double weightDiff = weight - idealWeight; // 負數代表太輕，正數代表太重
 
-            if (resultIndex == 1) // 剛好是健康體位
+            if (resultIndex == 1) 
             {
                 lblSuggestion.Text = "太棒了！您維持得非常完美，請繼續保持。";
             }
@@ -126,7 +125,6 @@ namespace BMI計算機
                         exportData[i] = lstHistory.Items[i].ToString();
                     }
 
-                    // 寫入使用者選擇的路徑 (sfd.FileName)
                     System.IO.File.WriteAllLines(sfd.FileName, exportData);
 
                     MessageBox.Show("紀錄匯出成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
